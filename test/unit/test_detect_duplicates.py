@@ -1,12 +1,6 @@
 import pytest
 from src.util.detector import detect_duplicates
 
-# develop your test cases here
-
-@pytest.mark.unit
-def test_detect_duplicates():
-    assert True
-
 # Build BibTeX strings with variations
 def build_bibtex_entry(key, doi=None):
     entry = f"@article{{{key},\n  title={{Sample Title}},\n  author={{John Doe}},\n  year={{2020}},\n"
@@ -68,3 +62,12 @@ def test_6_different_key_missing_doi():
     data = entry1 + "\n\n" + entry2
     result = detect_duplicates(data)
     assert len(result) == 0
+
+# The test cases are structured based on a test design table using the four-step method.
+# Each test targets a specific combination of conditions involving BibTeX key matching and DOI presence.
+# A helper function (build_bibtex_entry) is used to generate consistent input data for each test case.
+
+# Each test function is self-contained and builds its own BibTeX input data.
+# There is no shared state, no reliance on global variables, and tests do not affect one another.
+
+# Simulating realistic BibTeX input including proper formatting and line separation to ensure the parser function handled input correctly during tests.
