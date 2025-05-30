@@ -23,3 +23,4 @@ def test_1_duplicate_key_and_matching_doi():
     data = entry1 + "\n\n" + entry2
     result = detect_duplicates(data)
     assert len(result) == 1
+
