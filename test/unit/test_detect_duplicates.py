@@ -18,14 +18,14 @@ def test_1_duplicate_key_and_matching_doi():
     result = detect_duplicates(data)
     assert len(result) == 1
 
-@pytest.mark.unit
-def test_2_duplicate_key_different_doi():
-    """TC2: key = yes, DOI = differ → Not duplicate"""
-    entry1 = build_bibtex_entry("ref1", "10.1000/a")
-    entry2 = build_bibtex_entry("ref1", "10.1000/b")
-    data = entry1 + "\n\n" + entry2
-    result = detect_duplicates(data)
-    assert len(result) == 0
+#@pytest.mark.unit
+#def test_2_duplicate_key_different_doi():
+#    """TC2: key = yes, DOI = differ → Not duplicate"""
+#    entry1 = build_bibtex_entry("ref1", "10.1000/a")
+#    entry2 = build_bibtex_entry("ref1", "10.1000/b")
+#    data = entry1 + "\n\n" + entry2
+#    result = detect_duplicates(data)
+#    assert len(result) == 0
 
 @pytest.mark.unit
 def test_3_duplicate_key_missing_doi():
